@@ -25,7 +25,7 @@ func NewPinger(ip string, timeout time.Duration) (*Pinger, error) {
 func (p *Pinger) Ping() error {
     conn, err := net.DialTimeout(p.getNetwork(), p.ip.String(), p.timeout)
     if err != nil {
-        return fmt.Errorf("Ping failed: %s", err.Error())
+        return fmt.Errorf("ping failed: %s", err.Error())
     }
     conn.Close()
     return nil
