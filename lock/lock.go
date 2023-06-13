@@ -3,8 +3,9 @@ package lock
 import "context"
 
 type Lock interface {
-	TryLock() (bool, error)
-	UnLock() (bool, error)
-	TryLockCtx(ctx context.Context) (bool, error)
-	UnLockCtx(ctx context.Context) (bool, error)
+	TryLock() error
+	UnLock() error
+	TryLockCtx(ctx context.Context) error
+	UnLockCtx(ctx context.Context) error
+	Lock(ctx context.Context) error
 }
